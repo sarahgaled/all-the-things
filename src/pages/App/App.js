@@ -5,6 +5,7 @@ import ManliestThings from '../ManliestThings/ManliestThings'
 import FunctionalThings from '../FunctionalThings/FunctionalThings'
 import StyledThings from '../StyledThings/StyledThings'
 import SjThings from '../SjThings/SjThings'
+import NerdThings from '../NerdThings/NerdThings'
 
 class App extends Component {
   state = { 
@@ -73,6 +74,7 @@ class App extends Component {
         image: "https://i.imgur.com/gRxOxsA.jpg", 
         attributes: ["makes you live a long time", "consistent poops", "probably tacos sometimes!", "farm to market"], 
       },
+
     ],
     sjThings: [
       {
@@ -84,7 +86,29 @@ class App extends Component {
         name: "React hooks",
         image: "https://images.unsplash.com/photo-1518644730709-0835105d9daa?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80",
         attributes: ["useEffect", "useState", "not a taco", "state's best friend"], 
+      }
+    ],
+    juniorThings: [
+      {
+        name: "comics",
+        image: "https://wallpapercave.com/wp/kOhVbzJ.jpg",  
+        attributes: ["efficient", "reusability", "not a taco", "beautiful"],
       },
+      {
+        name: "anime",
+        image: "https://wallpapercave.com/wp/wp5277659.jpg",
+        attributes: ["useEffect", "useState", "not a taco", "state's best friend"], 
+      },
+      {
+        name: "BluBlockers",
+        image: "https://susanmaryetta.files.wordpress.com/2011/06/blublocker-the-hangover.png?w=584",
+        attributes: ["very attractive", "useful probably!", "good for viewing tacos", "such hip", "worn by all the cool kids"],
+      },
+      { 
+        name: "Healthy food", 
+        image: "https://i.imgur.com/gRxOxsA.jpg", 
+        attributes: ["makes you live a long time", "consistent poops", "probably tacos sometimes!", "farm to market"], 
+      }
     ]
   } 
   render() {
@@ -98,6 +122,7 @@ class App extends Component {
             <Link to="/the-functional-things">Shahzad's Things</Link><br/>
             <Link to="/the-well-styled-things">David's Things</Link><br/>
             <Link to="/sj-things-link-here">SJ Things!</Link><br/>
+            <Link to="/the-nerd-things">Junior's Things</Link><br/>
           </>
         </Route>
         {/* All the <Route> components should live here */}
@@ -112,6 +137,8 @@ class App extends Component {
         </Route>
         <Route exact path='/sj-things-link-here'>
           <StyledThings things={this.state.sjThings} />
+        <Route exact path='/the-nerd-things'>
+          <StyledThings things={this.state.juniorThings} />
         </Route>
       </>
       
