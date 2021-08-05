@@ -4,6 +4,7 @@ import './App.css';
 import ManliestThings from '../ManliestThings/ManliestThings'
 import FunctionalThings from '../FunctionalThings/FunctionalThings'
 import StyledThings from '../StyledThings/StyledThings'
+import SjThings from '../SjThings/SjThings'
 
 class App extends Component {
   state = { 
@@ -72,7 +73,19 @@ class App extends Component {
         image: "https://i.imgur.com/gRxOxsA.jpg", 
         attributes: ["makes you live a long time", "consistent poops", "probably tacos sometimes!", "farm to market"], 
       },
-    ] 
+    ],
+    sjThings: [
+      {
+        name: "functional programming",
+        image: "https://imgs.xkcd.com/comics/functional.png",  
+        attributes: ["efficient", "reusability", "not a taco", "beautiful"],
+      },
+      {
+        name: "React hooks",
+        image: "https://images.unsplash.com/photo-1518644730709-0835105d9daa?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80",
+        attributes: ["useEffect", "useState", "not a taco", "state's best friend"], 
+      },
+    ]
   } 
   render() {
     return (
@@ -84,6 +97,7 @@ class App extends Component {
             <Link to="/the-manliest-things">Ben's Things</Link><br/>
             <Link to="/the-functional-things">Shahzad's Things</Link><br/>
             <Link to="/the-well-styled-things">David's Things</Link><br/>
+            <Link to="/sj-things-link-here">SJ Things!</Link><br/>
           </>
         </Route>
         {/* All the <Route> components should live here */}
@@ -95,6 +109,9 @@ class App extends Component {
         </Route>
         <Route exact path='/the-well-styled-things'>
           <StyledThings things={this.state.davidsThings} />
+        </Route>
+        <Route exact path='/sj-things-link-here'>
+          <StyledThings things={this.state.sjThings} />
         </Route>
       </>
       
